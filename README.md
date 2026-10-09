@@ -15,8 +15,6 @@ Seluruh kode ada di **satu notebook**: `ijazah_verification.ipynb`. Tidak ada fi
 
 ## Cara menjalankan
 
-Soal "apakah notebook perlu download OCR lagi": **perlu, tapi sudah diotomatisasi.** OCR memakai Tesseract, yaitu program terpisah dari Python. Bedanya dengan `.py`, di notebook pemasangannya ditaruh di sel pertama, jadi cukup tekan **Run All** dan sel itu mengurus semuanya.
-
 ### Opsi A: Google Colab (paling mudah, tanpa pasang apa pun)
 
 1. Buka <https://colab.research.google.com>, pilih **File > Upload notebook**, lalu unggah `ijazah_verification.ipynb`.
