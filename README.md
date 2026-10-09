@@ -10,9 +10,6 @@ Nomor Ijazah : 571012022000056
 Tanda Tangan : PRESENT
 ```
 
-Seluruh kode ada di **satu notebook**: `ijazah_verification.ipynb`. Tidak ada file `.py`. Notebook yang ada di repo ini sudah berisi hasil eksekusi (gambar dan tabel), jadi bisa dibaca langsung di GitHub tanpa menjalankan apa pun.
-
-
 ## Cara menjalankan
 
 ### Opsi A: Google Colab (paling mudah, tanpa pasang apa pun)
