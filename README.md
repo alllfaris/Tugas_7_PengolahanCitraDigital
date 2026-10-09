@@ -12,19 +12,6 @@ Tanda Tangan : PRESENT
 
 Seluruh kode ada di **satu notebook**: `ijazah_verification.ipynb`. Tidak ada file `.py`. Notebook yang ada di repo ini sudah berisi hasil eksekusi (gambar dan tabel), jadi bisa dibaca langsung di GitHub tanpa menjalankan apa pun.
 
-## Struktur folder
-
-```
-.
-├── ijazah_verification.ipynb   <- semua kode + penjelasan metode
-├── README.md
-├── requirements.txt
-├── data/
-│   ├── ijazah_001.jpg                       contoh ijazah asli
-│   ├── ijazah_002_tanpa_ttd_sintetis.jpg    ijazah sintetis tanpa TTD (dibuat otomatis oleh notebook)
-│   └── ground_truth.csv                     nomor ijazah sebenarnya, untuk hitung CER
-└── results/                    <- tabel CER dan gambar hasil (dibuat saat notebook dijalankan)
-```
 
 ## Cara menjalankan
 
@@ -117,25 +104,3 @@ Pembahasannya:
 | `ijazah_001.jpg` | PRESENT | ijazah asli |
 | `ijazah_002_tanpa_ttd_sintetis.jpg` | ABSENT | area TTD Rektor dihapus secara digital |
 
-## Keterbatasan
-
-- Pengujian memakai **satu ijazah** nyata. Kondisi buruk dibuat secara simulasi, jadi CER sebaiknya dibaca sebagai perbandingan relatif antarmetode, bukan angka akurasi di lapangan.
-- Area nomor dan tanda tangan ditentukan dengan ROI relatif untuk **template ijazah Universitas Indonesia**. Template kampus lain butuh penyesuaian `NUM_BOX` dan `SIG_BOX` di notebook.
-- Sistem hanya mendeteksi **ada atau tidaknya** goresan tinta pada area tanda tangan. Keaslian tanda tangan tidak diperiksa.
-- Yang dicek adalah tanda tangan Rektor. Tanda tangan Dekan bisa ditambahkan dengan satu ROI baru.
-- Tesseract membaca digit dengan baik pada font cetak seperti ini, tetapi belum dilatih khusus untuk nomor ijazah.
-
-## Catatan privasi sebelum upload ke GitHub
-
-`data/ijazah_001.jpg` berisi nama, tanggal lahir, NPM, foto, dan nomor ijazah asli. Kalau repo akan dibuat **publik**, pertimbangkan menyamarkan gambar itu atau membuat repo **private** dan memberi akses ke dosen.
-
-## Upload ke GitHub
-
-```bash
-git init
-git add .
-git commit -m "Prototype verifikasi ijazah: OCR + deteksi tanda tangan"
-git branch -M main
-git remote add origin https://github.com/<username>/<nama-repo>.git
-git push -u origin main
-```
